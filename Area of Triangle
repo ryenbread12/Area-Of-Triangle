@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> Area of Triangle Given Sides </h2>
+<p>Please Input Each Side of the Triangle:</p>
+
+Side 1:  <input type="number" name="side1" id="side1"><br>
+Side 2:  <input type="number" name="side2" id="side2"><br>
+Side 3:  <input type="number" name="side3" id="side3"><br>
+</n>
+<button onClick="Triangle(document.getElementById('side1').value, document.getElementById('side2').value, document.getElementById('side3').value)">Compute</button>
+
+<script>
+function Triangle (side1,side2,side3) {
+	side1 = parseFloat(side1);
+	side2 = parseFloat(side2);
+	side3 = parseFloat(side3);
+	var perimeter = parseInt(side1 + side2 + side3);
+	var s = perimeter/2;
+
+	var area = Math.sqrt(s*((s - side1)*(s - side2)*(s - side3)));
+
+	if (area == 0) {
+		alert ("impossible triangle");
+	} else {
+		document.write("Area of triangle: " + area);
+
+	}
+}
+</script>
+
+
+</body>
+</html>
